@@ -1,0 +1,118 @@
+body {
+  padding: 20px;
+}
+
+section.container {
+  margin: 20px auto;
+  padding: 40px 60px;
+  border: solid 1px #cdcdcd;
+  box-shadow: 6px -3px 6px #cdcdcd;
+  border-radius: 4px;
+}
+.search-form-container {
+  margin: 20px 0 40px;
+}
+input {
+  border: 2px #2c8317 solid;
+  height: 100%;
+  width: 100%;
+}
+input::placeholder {
+  color: #2c8317;
+  font-size: 18px;
+}
+input[type="submit"] {
+  background-color: #2c8317;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 8px 28px;
+  font-size: 20px;
+  transition: all 200ms ease-in-out;
+  border: none;
+}
+input[type="submit"]:hover {
+  background-color: #205513;
+}
+#current {
+  margin: 10px 0;
+  height: 46px;
+  background-color: dodgerblue;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 18px;
+  border-color: cornflowerblue;
+}
+#current:hover {
+  background-color: cornflowerblue;
+}
+h2 {
+  font-weight: 700;
+}
+h5,
+.avarage-temperature {
+  text-align: center;
+}
+.current {
+  margin: 40px 0;
+}
+.forecast .day {
+  border: 2px solid #ffec3d;
+  padding: 0;
+}
+.forecast .day:first-child {
+  border-bottom: none;
+}
+.forecast .day .avarage-temperature {
+  background-color: #ffec3d;
+  padding: 16px 0;
+  margin: 12px 0;
+}
+.forecast .day:nth-child(2) .avarage-temperature {
+  background-color: #ff8b3d;
+}
+.forecast .day:nth-child(3) .avarage-temperature {
+  background-color: #3de8ff;
+}
+.forecast .day:nth-child(5) .avarage-temperature {
+  background-color: #3de8ff;
+}
+.forecast-hours {
+  border: 2px solid #ffec3d;
+  border-top: none;
+  padding-bottom: 20px;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 700, "GRAD" 0, "opsz" 48;
+}
+img {
+  width: 80px;
+  display: block;
+  margin: 0 auto;
+}
+.day-title,
+.wind {
+  align-items: center;
+  margin: 10px 0;
+  text-align: center;
+}
+.avarage-temperature span {
+  display: block;
+  margin: 0 auto;
+  font-size: 24px;
+  font-weight: 500;
+}
+.forecast-hours {
+  padding-top: 20px;
+  font-size: 15px;
+}
+.forecast-hours .hours {
+  font-weight: 600;
+}
+.forecast-hours div {
+  min-height: 40px;
+}
+.hour-humidity {
+  color: #3d71ff;
+}
