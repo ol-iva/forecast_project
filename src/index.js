@@ -1,17 +1,22 @@
 let date = document.querySelector("h6.date");
-let apiKey = "e7a0e5ad9471df9dbff483f56c2d189b";
+
 let unit = "metric";
 let searchForm = document.querySelector("#search-form");
 let celsius = null;
 
 date.innerHTML = formatDate(new Date());
+search('Ljubljana');
 
 searchForm.addEventListener("submit", changeTempByCity);
 
 function changeTempByCity(event) {
   event.preventDefault();
   let city = document.querySelector("#city-input").value;
+  search(city);
+}
 
+function search(city) {
+  let apiKey = "e7a0e5ad9471df9dbff483f56c2d189b";
   let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${unit}`;
 
   axios.get(url).then(showWeather);
@@ -22,12 +27,20 @@ function showWeather(response) {
   let tempElement = document.querySelector("span#temperature-now");
   let humidityElement = document.querySelector("span#humidity-now");
   let windElement = document.querySelector("span#wind-now");
+  let iconElement = document.querySelector("#main-icon");
+  let dateElement = document.querySelector("#date");
 
   celsius = weather.main.temp;
   tempElement.innerHTML = Math.round(celsius);
   humidityElement.innerHTML = `${weather.main.humidity} %`;
   windElement.innerHTML = `${weather.wind.speed} km/h`;
-  date.innerHTML = formatDate(new Date());
+  date.innerHTML = formatDate(new Date(response.data.dt * 1000));
+
+  iconElement.setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 
   changeCity(weather.name);
 }

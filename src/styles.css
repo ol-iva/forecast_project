@@ -37,18 +37,6 @@ input[type="submit"] {
 input[type="submit"]:hover {
   background-color: #205513;
 }
-/*#current {*/
-/*  margin: 10px 0;*/
-/*  height: 46px;*/
-/*  background-color: dodgerblue;*/
-/*  color: #ffffff;*/
-/*  font-weight: 700;*/
-/*  font-size: 18px;*/
-/*  border-color: cornflowerblue;*/
-/*}*/
-/*#current:hover {*/
-/*  background-color: cornflowerblue;*/
-/*}*/
 h2 {
   font-weight: 700;
 }
@@ -56,9 +44,6 @@ h5,
 .avarage-temperature {
   text-align: center;
 }
-/*.current {*/
-/*  margin: 40px 0;*/
-/*}*/
 .forecast .day {
   border: 2px solid #ffec3d;
   padding: 0;
@@ -94,6 +79,9 @@ img {
   width: 80px;
   display: block;
   margin: 0 auto;
+}
+img#main-icon {
+  transform: scale(1.4);
 }
 .day-title,
 .wind {
