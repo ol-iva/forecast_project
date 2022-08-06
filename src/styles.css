@@ -1,7 +1,6 @@
 body {
   padding: 20px;
 }
-
 section.container {
   margin: 20px auto;
   padding: 40px 60px;
@@ -33,18 +32,18 @@ input[type="submit"] {
 input[type="submit"]:hover {
   background-color: #205513;
 }
-#current {
-  margin: 10px 0;
-  height: 46px;
-  background-color: dodgerblue;
-  color: #ffffff;
-  font-weight: 700;
-  font-size: 18px;
-  border-color: cornflowerblue;
-}
-#current:hover {
-  background-color: cornflowerblue;
-}
+/*#current {*/
+/*  margin: 10px 0;*/
+/*  height: 46px;*/
+/*  background-color: dodgerblue;*/
+/*  color: #ffffff;*/
+/*  font-weight: 700;*/
+/*  font-size: 18px;*/
+/*  border-color: cornflowerblue;*/
+/*}*/
+/*#current:hover {*/
+/*  background-color: cornflowerblue;*/
+/*}*/
 h2 {
   font-weight: 700;
 }
@@ -52,9 +51,9 @@ h5,
 .avarage-temperature {
   text-align: center;
 }
-.current {
-  margin: 40px 0;
-}
+/*.current {*/
+/*  margin: 40px 0;*/
+/*}*/
 .forecast .day {
   border: 2px solid #ffec3d;
   padding: 0;
@@ -114,5 +113,46 @@ img {
   min-height: 40px;
 }
 .hour-humidity {
-  color: #3d71ff;
+  color: #666666;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  top: 32px;
+}
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  color: #666666;
+  font-size: 16px;
+  line-height: 2;
+  font-weight: 100;
+}
+li:first-letter {
+  text-transform: capitalize;
+}
+#temperature-now {
+  font-size: 64px;
+}
+.current .units {
+  position: relative;
+  font-size: 16px;
+  top: -34px;
+}
+.date {
+  color: #666666;
+}
+
+.units a {
+  color: #2c8317;
+}
+.units .active {
+  color: rgb(33, 33, 33);
+  cursor: default;
+}
+
+.units .active:hover {
+  text-decoration: none;
 }

@@ -32,7 +32,6 @@ function changeTempByCity(event) {
 }
 
 function showWeather(response) {
-  console.log(response);
   let weather = response.data;
   let tempElement = document.querySelector("span#temperature-now");
   let humidityElement = document.querySelector("span#humidity-now");
@@ -47,12 +46,12 @@ function showWeather(response) {
 searchForm.addEventListener("submit", changeTempByCity);
 
 // event on the button 'current'
-let buttonCurrent = document.querySelector("#current");
-buttonCurrent.addEventListener("click", current);
+// let buttonCurrent = document.querySelector("#current");
+// buttonCurrent.addEventListener("click", current);
 
-function current(event) {
-  navigator.geolocation.getCurrentPosition(getCurrentTemp);
-}
+// function current(event) {
+//   navigator.geolocation.getCurrentPosition(getCurrentTemp);
+// }
 
 function getCurrentTemp(result) {
   let apiKey = "e7a0e5ad9471df9dbff483f56c2d189b";

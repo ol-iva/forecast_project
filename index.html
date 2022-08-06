@@ -36,25 +36,37 @@
               <input type="submit" value="Search" />
             </div>
           </div>
-          <div class="row">
-            <div class="col-9"></div>
-            <div class="col-3">
-              <input type="button" id="current" value="Current" />
-            </div>
-          </div>
+<!--          <div class="row">-->
+<!--            <div class="col-9"></div>-->
+<!--            <div class="col-3">-->
+<!--              <input type="button" id="current" value="Current" />-->
+<!--            </div>-->
+<!--          </div>-->
         </form>
       </div>
-      <div class="current">
-        <h2 class="temperature">
-          <span id="temperature-now">28</span>&#176;C
-          <!-- <a href="#" id="celsius">&#176;C</a> -->
-          <!-- |
-          <a href="#" id="fahrenheit">&#176;F</a> -->
-        </h2>
-        <h6 class="detailed-weather">
-          Humidity: <span id="humidity-now">43 %</span> Wind:
-          <span id="wind-now">4 km/h</span>
-        </h6>
+      <div class="current container">
+        <div class="row">
+          <div class="col-6 ">
+            <img src="https://ssl.gstatic.com/onebox/weather/64/rain_s_cloudy.png" alt="" id="main-icon" class="float-left">
+            <h2 class="temperature float-right">
+              <span id="temperature-now">28</span>
+              <span class="units">
+                <a href="#" id="celsius">&#176;C</a>
+                |
+                <a href="#" id="fahrenheit">&#176;F</a>
+              </span>
+            </h2>
+          </div>
+          <div class="col-6">
+            <ul class="detailed-weather float-right">
+              <li>Humidity: <span id="humidity-now">43 %</span></li>
+              <li> Wind:
+                <span id="wind-now">4 km/h</span></li>
+            </ul>
+          </div>
+        </div>
+
+
         <h6 class="date">12:00 Friday, 24 June 2022</h6>
         <h2 class="place" id="place">Piran, Slovenia</h2>
       </div>
@@ -204,7 +216,7 @@
         </div>
       </div>
     </section>
-    <div><a href="https://github.com/ol-iva/forecast_project">Open-source code</a> by Ol-Iva</div>
+    <div>This project was coded by Ol-Iva and is <a href="https://github.com/ol-iva/forecast_project">Open-source code on GitHub</a> and <a href="">hosted on Netlify</a></div>
     <script src="src/index.js"></script>
   </body>
 </html>
