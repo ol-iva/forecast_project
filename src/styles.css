@@ -1,13 +1,18 @@
 body {
   padding: 20px;
 }
-section.container {
+section {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.wrapper {
   margin: 20px auto;
-  padding: 40px 60px;
+  padding: 30px;
   border: solid 1px #cdcdcd;
   box-shadow: 6px -3px 6px #cdcdcd;
   border-radius: 4px;
 }
+
 .search-form-container {
   margin: 20px 0 40px;
 }
@@ -155,4 +160,7 @@ li:first-letter {
 
 .units .active:hover {
   text-decoration: none;
+}
+#place {
+  margin-bottom: 40px;
 }
