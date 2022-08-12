@@ -2,30 +2,34 @@ let date = document.querySelector("#date");
 let unit = "metric";
 let searchForm = document.querySelector("#search-form");
 let celsius = null;
+let apiKey = "e7a0e5ad9471df9dbff483f56c2d189b";
 let celsiusLinkElement = document.querySelector("#celsius");
 let fahrenheitLinkElement = document.querySelector("#fahrenheit");
 
 date.innerHTML = formatDate(new Date());
-search('Ljubljana');
+search('Ljubljana', apiKey);
 
 searchForm.addEventListener("submit", changeTempByCity);
-fahrenheitLinkElement.addEventListener("click", showTemperatureFarenheit);
-celsiusLinkElement.addEventListener("click", showTemperatureCelsius);
+// fahrenheitLinkElement.addEventListener("click", showTemperatureFarenheit);
+// celsiusLinkElement.addEventListener("click", showTemperatureCelsius);
 
 function changeTempByCity(event) {
   event.preventDefault();
   let city = document.querySelector("#city-input").value;
-  search(city);
+
+
+  search(city, apiKey);
 }
 
-function search(city) {
-  let apiKey = "e7a0e5ad9471df9dbff483f56c2d189b";
+function search(city, apiKey) {
   let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${unit}`;
 
   axios.get(url).then(showWeather);
 }
 
 function showWeather(response) {
+  let longitude = response.data.coord.lon;
+  let latitude = response.data.coord.lat;
   let weather = response.data;
   let tempElement = document.querySelector("span#temperature-now");
   let humidityElement = document.querySelector("span#humidity-now");
@@ -48,6 +52,8 @@ function showWeather(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
 
   changeCity(weather.name);
+
+  callAPIForecast(longitude, latitude, apiKey);
 }
 
 function changeCity(value) {
@@ -80,23 +86,32 @@ function formatDate(date) {
   return `${weekDay} ${hours}:${minutes}`;
 }
 
-
-function showTemperatureFarenheit(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature-now");
-  let fahrenheitTemperature = (celsius * 9) / 5 + 32;
-  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
-  fahrenheitLinkElement.classList.add("active");
-  celsiusLinkElement.classList.remove("active");
+function callAPIForecast(longitude, latitude, apiKey) {
+  let url = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=minutely&appid=${apiKey}`;
+  axios.get(url).then(showForecast);
 }
 
-function showTemperatureCelsius(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature-now");
-  temperatureElement.innerHTML = Math.round(celsius);
-fahrenheitLinkElement.classList.remove("active");
-celsiusLinkElement.classList.add("active");
+function showForecast(result) {
+  console.log(result);
 }
+
+
+// function showTemperatureFarenheit(event) {
+//   event.preventDefault();
+//   let temperatureElement = document.querySelector("#temperature-now");
+//   let fahrenheitTemperature = (celsius * 9) / 5 + 32;
+//   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+//   fahrenheitLinkElement.classList.add("active");
+//   celsiusLinkElement.classList.remove("active");
+// }
+//
+// function showTemperatureCelsius(event) {
+//   event.preventDefault();
+//   let temperatureElement = document.querySelector("#temperature-now");
+//   temperatureElement.innerHTML = Math.round(celsius);
+// fahrenheitLinkElement.classList.remove("active");
+// celsiusLinkElement.classList.add("active");
+// }
 
 
 
