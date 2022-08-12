@@ -14,6 +14,7 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
     />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 
     <link rel="stylesheet" href="src/styles.css" />
     <title>Forecast</title>
@@ -31,6 +32,7 @@
                 autocomplete="off"
                 placeholder="Search place..."
               />
+              <input type="hidden" name="units" value="metric" id="units"/>
             </div>
             <div class="col-3">
               <input type="submit" value="Search" />
@@ -55,7 +57,7 @@
             <ul class="detailed-weather float-right">
               <li>Humidity: <span id="humidity-now">43 %</span></li>
               <li> Wind:
-                <span id="wind-now">4 km/h</span></li>
+                <span id="wind-now">4 m/s</span></li>
             </ul>
           </div>
         </div>
@@ -66,148 +68,22 @@
           </h6>
         <h2 class="place" id="place">Piran, Slovenia</h2>
       </div>
-      <div class="container-fluid w-100 forecast">
-        <div class="row">
+      <div class="container-fluid w-100 forecast" id="forecast">
+        <div class="row" id="forecast-daily">
           <div class="day col-2">
             <div class="day-title">
               <h5>Today</h5>
             </div>
             <div class="img-sun">
-              <img src="images/sun-svgrepo-com.svg" alt="" class="sun-icon" />
+              <img src="https://ssl.gstatic.com/onebox/weather/64/rain_s_cloudy.png" alt="" class="sun-icon" />
             </div>
             <div class="avarage-temperature">
-              <span>28&#176;</span>
+              <span class="max">28&#176;</span><span class="min">12&#176</span>
             </div>
             <div class="wind">
               <span class="material-symbols-outlined"> north </span>
               <span class="wind-speed">14</span> km/h
             </div>
-          </div>
-          <div class="day col-2">
-            <div class="day-title">
-              <h5>Tomorrow</h5>
-            </div>
-            <div class="img-sun">
-              <img
-                src="images/clouds-svgrepo-com.svg"
-                alt=""
-                class="sun-icon"
-              />
-            </div>
-            <div class="avarage-temperature">
-              <span>28&#176;C</span>
-            </div>
-            <div class="wind">
-              <span class="material-symbols-outlined"> east </span>
-              <span class="wind-speed">3</span> km/h
-            </div>
-          </div>
-          <div class="day col-2">
-            <div class="day-title">
-              <h5>26.06</h5>
-            </div>
-            <div class="img-sun">
-              <img src="images/hail-svgrepo-com.svg" alt="" class="sun-icon" />
-            </div>
-            <div class="avarage-temperature">
-              <span>24&#176;C</span>
-            </div>
-            <div class="wind">
-              <span class="material-symbols-outlined"> west </span>
-              <span class="wind-speed">4</span> km/h
-            </div>
-          </div>
-          <div class="day col-2">
-            <div class="day-title">
-              <h5>27.06</h5>
-            </div>
-            <div class="img-sun">
-              <img src="images/rain-svgrepo-com.svg" alt="" class="sun-icon" />
-            </div>
-            <div class="avarage-temperature">
-              <span>25&#176;C</span>
-            </div>
-            <div class="wind">
-              <span class="material-symbols-outlined"> north_west </span>
-              <span class="wind-speed">8</span> km/h
-            </div>
-          </div>
-          <div class="day col-2">
-            <div class="day-title">
-              <h5>28.06</h5>
-            </div>
-            <div class="img-sun">
-              <img src="images/storm-svgrepo-com.svg" alt="" class="sun-icon" />
-            </div>
-            <div class="avarage-temperature">
-              <span>28&#176;C</span>
-            </div>
-            <div class="wind">
-              <span class="material-symbols-outlined"> south_east </span>
-              <span class="wind-speed">11</span> km/h
-            </div>
-          </div>
-          <div class="day col-2">
-            <div class="day-title">
-              <h5>29.06</h5>
-            </div>
-            <div class="img-sun">
-              <img src="images/sun-svgrepo-com.svg" alt="" class="sun-icon" />
-            </div>
-            <div class="avarage-temperature">
-              <span>21&#176;C</span>
-            </div>
-            <div class="wind">
-              <span class="material-symbols-outlined"> south </span>
-              <span class="wind-speed">5</span> km/h
-            </div>
-          </div>
-        </div>
-        <div class="row forecast-hours">
-          <div class="col-4">
-            <div class="hours empty"></div>
-            <div class="hour-temperature">Temperature</div>
-            <div class="hour-humidity">Precipitation probability</div>
-          </div>
-          <div class="col-1">
-            <div class="hours">03:00</div>
-            <div class="hour-temperature">20&#176;</div>
-            <div class="hour-humidity">20%</div>
-          </div>
-          <div class="col-1">
-            <div class="hours">06:00</div>
-            <div class="hour-temperature">25&#176;</div>
-            <div class="hour-humidity">10%</div>
-          </div>
-          <div class="col-1">
-            <div class="hours">09:00</div>
-            <div class="hour-temperature">25&#176;</div>
-            <div class="hour-humidity">5%</div>
-          </div>
-          <div class="col-1">
-            <div class="hours">12:00</div>
-            <div class="hour-temperature">28&#176;</div>
-            <div class="hour-humidity">0%</div>
-          </div>
-          <div class="col-1">
-            <div class="hours">15:00</div>
-            <div class="hour-temperature">28&#176;</div>
-            <div class="hour-humidity">0%</div>
-          </div>
-          <div class="col-1">
-            <div class="hours">18:00</div>
-            <div class="hour-temperature">28&#176;</div>
-            <div class="hour-humidity">0%</div>
-          </div>
-          <div class="col-1">
-            <div class="hours">21:00</div>
-            <div class="hour-temperature">21&#176;</div>
-            <div class="hour-humidity">30%</div>
-          </div>
-          <div class="col-1">
-            <div class="hours">00:00</div>
-            <div class="hour-temperature">19&#176;</div>
-            <div class="hour-humidity">10%</div>
           </div>
         </div>
       </div>
